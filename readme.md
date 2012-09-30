@@ -34,6 +34,8 @@ either width and height or by size (square):
 
     <?php
 
+    use ConstructorOverloading\Dispatcher;
+
     class Rectangle
     {
         private $width, $height;
