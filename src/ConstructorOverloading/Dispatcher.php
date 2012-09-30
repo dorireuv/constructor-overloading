@@ -70,7 +70,7 @@ class Dispatcher
         $reflectionClass = new ReflectionClass($object);
         $reflectionMethod = $reflectionClass->getMethod($constructorName);
         $reflectionMethod->setAccessible(true);
-        $reflectionMethod->invokeArgs($object, array($args));
+        $reflectionMethod->invokeArgs($object, $args);
         $reflectionMethod->setAccessible(false);
     }
 }

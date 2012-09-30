@@ -20,7 +20,7 @@ class DispatcherTest extends PHPUnit_Framework_TestCase
     public function testDispatch()
     {
         $tempObject = new TempObject();
-        $args = array();
+        $args = array('a', 'b');
 
         $resolverMock = $this->getMock('ConstructorOverloading\\Resolver');
         $resolverMock->expects($this->once())
@@ -32,6 +32,7 @@ class DispatcherTest extends PHPUnit_Framework_TestCase
         $resolver = $resolverMock;
         $dispatcher = new Dispatcher($resolver);
         $dispatcher->dispatch($tempObject, $args);
+        $this->assertEquals($args, $tempObject->temp);
     }
 
     /**
@@ -51,5 +52,10 @@ class DispatcherTest extends PHPUnit_Framework_TestCase
 
 class TempObject
 {
-    protected function _construct1() { }
+    public $temp;
+
+    protected function _construct1()
+    {
+        $this->temp = func_get_args();
+    }
 }
