@@ -1,7 +1,7 @@
 {
     "name": "constructor-overloading/constructor-overloading",
     "description": "Constructor overloading for PHP 5.3",
-    "version": "1.0",
+    "version": "2.0",
     "keywords": ["constructor", "overloading"],
     "homepage": "http://github.com/dorireuv/constructor-overloading",
     "type": "library",
