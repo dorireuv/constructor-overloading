@@ -206,7 +206,7 @@ class OverloadedConstructorExampleClass
     protected function _constructBoolean($boolean = false) { }
 
     /**
-     * @param resource $resource
+     * @param  resource  $resource
      */
     protected function _constructResource($resource) { }
 

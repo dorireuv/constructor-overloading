@@ -158,7 +158,7 @@ class Resolver
                 if ($comment !== false && $comment !== '') {
                     $lines = explode("\n", str_replace("\r\n", "\n", $comment));
                     $parameterName =  $reflectionParameter->getName();
-                    $pattern = sprintf('/^@param ([a-z\\\\]+(?:\\|[a-z\\\\]+)*)[\\s]+\\$%s/i', $parameterName);
+                    $pattern = sprintf('/^@param[\\s]+([a-z\\\\]+(?:\\|[a-z\\\\]+)*)[\\s]+\\$%s/i', $parameterName);
                     foreach ($lines as $line) {
                         $line = trim($line, ' /*');
                         if (preg_match($pattern, $line, $matches)) {
